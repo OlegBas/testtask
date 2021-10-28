@@ -1,6 +1,9 @@
 <?php
 
 return [
-    'index.php' => 'site/index', // actionIndex в SiteController
-    '' => 'site/index', // actionIndex в SiteController
+    'subject' => 'subject/index',
+    'student' => 'subject/index',
+    'mark' => 'mark/index',
+    'index.php' => 'group/index',
+    '' => 'group/index',
 ];
