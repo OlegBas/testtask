@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Главная</title>
+    <title><?=$title?></title>
     <link href="../../template/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../template/css/main.css" rel="stylesheet">
 </head>
@@ -28,7 +28,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Группы</a></li>
+                    <li class="active"><a href="/">Группы</a></li>
                     <li><a href="/subject">Предметы</a></li>
                     <li><a href="/student">Студенты</a></li>
                     <li><a href="/mark">Оценки</a></li>
