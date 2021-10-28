@@ -7,8 +7,14 @@ class GroupController
 
     public function actionIndex()
     {
-
+        $group = new Group();
+//        print_r($group->selectAll(Group::TABLENAME));
         // Подключаем вид
+        $params = [
+            'title' => 'ИС3'
+        ];
+        echo $group->update(Group::TABLENAME,$params,1);
+//        echo $group->delete(Group::TABLENAME,1);
         require_once(ROOT . "/views/site/".$this->tmp_name."/index.php");
         return true;
     }

@@ -6,12 +6,12 @@
  * Date: 28.10.2021
  * Time: 12:12
  */
-class BaseModal extends  Db
+class BaseModel extends  Db
 {
 
     protected  $db;
 
-    protected  function __construct(){
+    public function __construct(){
         $this->db = Db::getConnection();
     }
 }
