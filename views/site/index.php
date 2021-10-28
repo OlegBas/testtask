@@ -1,2 +1,3 @@
-<?php
-echo "Start Page";
+<?php include ROOT . '/views/layouts/header.php'; ?>
+
+<?php include ROOT . '/views/layouts/footer.php'; ?>
