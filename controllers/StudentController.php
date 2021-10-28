@@ -7,7 +7,7 @@ class StudentController
 
     public function actionIndex()
     {
-
+        $students = Student::selectAll(Student::TABLENAME);
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/index.php");
         return true;

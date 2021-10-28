@@ -9,7 +9,7 @@ class SubjectController
 
     public function actionIndex()
     {
-
+        $subjects = Subject::selectAll(Subject::TABLENAME);
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/index.php");
         return true;

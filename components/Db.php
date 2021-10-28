@@ -49,7 +49,7 @@ class Db
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function selectAll($tablename){
+    public static function selectAll($tablename){
         return $this->select($tablename);
     }
 
