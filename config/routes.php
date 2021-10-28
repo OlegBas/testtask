@@ -12,6 +12,9 @@ return [
     'student/delete' => 'student/delete',
     'student' => 'student/index',
 
+    'mark/create' => 'mark/create',
+    'mark/update' => 'mark/update',
+    'mark/delete' => 'mark/delete',
     'mark' => 'mark/index',
 
     'group/create' => 'group/create',
