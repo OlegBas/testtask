@@ -28,7 +28,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">Группы</a></li>
+                    <li ><a href="/">Группы</a></li>
                     <li><a href="/subject">Предметы</a></li>
                     <li><a href="/student">Студенты</a></li>
                     <li><a href="/mark">Оценки</a></li>
