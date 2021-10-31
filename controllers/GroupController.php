@@ -43,7 +43,16 @@ class GroupController extends BaseController
 
     public function actionDelete()
     {
-        $this->sendForm("delete",Group::TABLENAME,"Group","group");
+        $id = $this->getIDFromUrl();
+        //получить все id студентов удаленной группы
+        $model_student = new Student();
+        $model_mark = new Mark();
+
+       if($this->sendForm("delete",Group::TABLENAME,"Group","group")){
+           $ids_string = $model_student->getStringIDsStudentOnIDGroup($id);
+           $model_student->deleteStudentsOnIDs($ids_string);
+           $model_mark->deleteMarksStudentsOnIDsStudent($ids_string);
+       }
         return true;
     }
 

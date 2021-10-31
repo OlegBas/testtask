@@ -35,4 +35,9 @@ class Mark extends BaseModel
         return $result->execute();
     }
 
+    public function deleteMarksStudentsOnIDsStudent($ids){
+        $sql = "DELETE FROM ".self::TABLENAME." WHERE idStudent IN ($ids)";
+        return $this->db->query($sql);
+    }
+
 }

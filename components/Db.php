@@ -30,9 +30,9 @@ class Db
     }
 
 
-    public  function select($tablename,$fields = "*",$where = false,$order = false, $limit = false){
+    public  function select($tablename,$fields = "*",$where = false,$order = false, $limit = false,$params = false){
 
-        $sql = "SELECT * FROM $tablename";
+        $sql = "SELECT $fields FROM $tablename";
         if($where)
             $sql .= " WHERE ".$where;
 
@@ -43,6 +43,14 @@ class Db
 
         // Используется подготовленный запрос
         $result = $this->db->prepare($sql);
+        if($params){
+            foreach ($params as $key => $val){
+                $result->bindValue(":$key",$val);
+            }
+        }
+
+
+
 
         // Выполнение коменды
         $result->execute();

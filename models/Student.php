@@ -20,5 +20,22 @@ class Student extends BaseModel
             return $result->fetchAll(PDO::FETCH_ASSOC);
         }
 
+        public function getStringIDsStudentOnIDGroup($id){
+           $ids =  $this->select(Student::TABLENAME,"id","idGroup = :id",false,false,["id" => $id]);
+           $ids_string = "";
+           for($i = 0;$i < count($ids);$i++){
+               $ids_string .= $ids[$i]["id"].",";
+           }
+           return substr($ids_string,0,-1);
+        }
+
+
+    public function deleteStudentsOnIDs($ids){
+        $sql = "DELETE FROM ".self::TABLENAME." WHERE id IN ($ids)";
+        return $this->db->query($sql);
+    }
+
+
+
 
 }
