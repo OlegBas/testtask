@@ -14,7 +14,7 @@ class MarkController extends BaseController
 
     public function actionIndex()
     {
-        $list_data = $this->model->selectAll(Mark::TABLENAME);
+        $list_data = $this->model->getAllMarks();
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/index.php");
         return true;

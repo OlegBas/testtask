@@ -11,7 +11,7 @@
         <label for="mark">Студент</label>
         <select class="form-control" name = "Mark[idStudent]">
             <?php for($i = 0;$i < count($all_students);$i++){?>
-                <option <?php if($all_students[$i]["id"] == @$entity[0]["idStudent"]) {?> selected <?php }?>  value = "<?=$all_students[$i]["id"]?>"><?=$all_students[$i]["fio"]?>></option>
+                <option <?php if($all_students[$i]["id"] == @$entity[0]["idStudent"]) {?> selected <?php }?>  value = "<?=$all_students[$i]["id"]?>"><?=$all_students[$i]["fio"]?></option>
             <?php }?>
         </select>
     </div>

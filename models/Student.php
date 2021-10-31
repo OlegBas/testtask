@@ -11,4 +11,5 @@ class Student extends BaseModel
             return $result->fetchAll(PDO::FETCH_ASSOC);
         }
 
+
 }

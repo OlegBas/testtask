@@ -17,8 +17,8 @@ $url_page = "/mark";
             <tr>
 
                 <td><?=$list_data[$i]["id"]?></td>
-                <td><?=$list_data[$i]["idStudent"]?></td>
-                <td><?=$list_data[$i]["idSubject"]?></td>
+                <td><?=$list_data[$i]["fio"]?></td>
+                <td><?=$list_data[$i]["title"]?></td>
                 <td><?=$list_data[$i]["mark"]?></td>
                 <td>
                     <?php include ROOT . '/widgets/action_buttons.php'; ?>
