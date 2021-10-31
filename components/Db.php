@@ -49,6 +49,8 @@ class Db
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
+
     public  function selectAll($tablename){
         return $this->select($tablename);
     }

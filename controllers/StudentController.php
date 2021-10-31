@@ -45,6 +45,12 @@ class StudentController extends BaseController
         return true;
     }
 
+    public function  actionRate(){
+        $students = $this->model->allRateStudentsOnAvgMark();
+        require_once(ROOT . "/views/site/".$this->tmp_name."/rate.php");
+        return true;
+    }
+
 
 
 

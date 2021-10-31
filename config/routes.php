@@ -1,16 +1,20 @@
 <?php
 
 return [
+
     'subject/create' => 'subject/create',
     'subject/update/([0-9]+)' => 'subject/update/$1',
     'subject/delete/([0-9]+)' => 'subject/delete/$1',
     'subject' => 'subject/index',
 
 
+    'student/rate' => 'student/rate',
     'student/create' => 'student/create',
     'student/update/([0-9]+)' => 'student/update/$1',
     'student/delete/([0-9]+)' => 'student/delete/$1',
     'student' => 'student/index',
+
+
 
     'mark/create' => 'mark/create',
     'mark/update/([0-9]+)' => 'mark/update/$1',

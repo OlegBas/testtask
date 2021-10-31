@@ -32,6 +32,7 @@
                     <li><a href="/subject">Предметы</a></li>
                     <li><a href="/student">Студенты</a></li>
                     <li><a href="/mark">Оценки</a></li>
+                    <li><a href="/student/rate">Рейтинг студентов</a></li>
                 </ul>
             </div>
         </nav>
