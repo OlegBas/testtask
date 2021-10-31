@@ -15,7 +15,7 @@ class Student extends BaseModel
 
 
         public function allRateStudentsOnAvgMark(){
-            $sql = "SELECT s.id,s.fio,AVG(m.mark) as avgmark  FROM students as s JOIN marks as m ON s.id = m.idStudent  GROUP BY s.fio DESC";
+            $sql = "SELECT s.id,s.fio,AVG(m.mark) as avgmark  FROM students as s JOIN marks as m ON s.id = m.idStudent  GROUP BY s.fio ";
             $result = $this->db->query($sql);
             return $result->fetchAll(PDO::FETCH_ASSOC);
         }
@@ -35,7 +35,12 @@ class Student extends BaseModel
         return $this->db->query($sql);
     }
 
-
+    public function selectAll($tablename)
+    {
+        $sql = "SELECT s.id,s.fio,g.title  FROM ".$tablename." as s JOIN groups as g ON s.idGroup = g.id";
+        $result = $this->db->query($sql);
+        return $result->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 
 }

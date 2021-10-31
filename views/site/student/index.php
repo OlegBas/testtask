@@ -11,6 +11,7 @@ $url_page = "/student";
         <tr>
             <th>ID</th>
             <th>ФИО</th>
+            <th>Группа</th>
             <th>Действия</th>
         </tr>
         <?php for($i = 0;$i < count($list_data);$i++) {?>
@@ -18,6 +19,7 @@ $url_page = "/student";
 
                 <td><?=$list_data[$i]["id"]?></td>
                 <td><?=$list_data[$i]["fio"]?></td>
+                <td><?=$list_data[$i]["title"]?></td>
                 <td>
                     <?php include ROOT . '/widgets/action_buttons.php'; ?>
                 </td>
