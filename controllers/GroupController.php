@@ -7,8 +7,8 @@ class GroupController
 
     public function actionIndex()
     {
-
-        $groups = Group::selectAll(Group::TABLENAME);
+        $group = new Group();
+        $groups = $group->selectAll(Group::TABLENAME);
 
         require_once(ROOT . "/views/site/".$this->tmp_name."/index.php");
         return true;

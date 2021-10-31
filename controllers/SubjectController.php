@@ -9,7 +9,8 @@ class SubjectController
 
     public function actionIndex()
     {
-        $subjects = Subject::selectAll(Subject::TABLENAME);
+        $subject = new Subject();
+        $subjects = $subject->selectAll(Subject::TABLENAME);
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/index.php");
         return true;

@@ -7,7 +7,8 @@ class MarkController
 
     public function actionIndex()
     {
-        $marks = Mark::selectAll(Mark::TABLENAME);
+        $mark = new Mark();
+        $marks = $mark->selectAll(Mark::TABLENAME);
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/index.php");
         return true;
