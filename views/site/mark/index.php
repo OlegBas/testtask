@@ -13,15 +13,18 @@ $url_page = "/mark";
             <th>Оценка</th>
             <th>Действия</th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>Бас Олег Генн</td>
-            <td>Физика</td>
-            <td>5</td>
-            <td>
-                <?php include ROOT . '/widgets/action_buttons.php'; ?>
-            </td>
-        </tr>
+        <?php for($i = 0;$i < count($list_data);$i++) {?>
+            <tr>
+
+                <td><?=$list_data[$i]["id"]?></td>
+                <td><?=$list_data[$i]["idStudent"]?></td>
+                <td><?=$list_data[$i]["idSubject"]?></td>
+                <td><?=$list_data[$i]["mark"]?></td>
+                <td>
+                    <?php include ROOT . '/widgets/action_buttons.php'; ?>
+                </td>
+            </tr>
+        <?php }?>
 
     </table>
 </div>

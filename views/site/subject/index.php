@@ -11,13 +11,16 @@ $url_page = "/subject";
             <th>Название</th>
             <th>Действия</th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>Бас Олег Генн</td>
-            <td>
-                <?php include ROOT . '/widgets/action_buttons.php'; ?>
-            </td>
-        </tr>
+        <?php for($i = 0;$i < count($list_data);$i++) {?>
+            <tr>
+
+                <td><?=$list_data[$i]["id"]?></td>
+                <td><?=$list_data[$i]["title"]?></td>
+                <td>
+                    <?php include ROOT . '/widgets/action_buttons.php'; ?>
+                </td>
+            </tr>
+        <?php }?>
 
     </table>
 </div>
