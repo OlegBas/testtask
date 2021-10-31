@@ -1,6 +1,6 @@
 <?php
 
-class GroupController
+class GroupController extends BaseController
 {
 
     public $tmp_name = "group";
@@ -8,6 +8,7 @@ class GroupController
 
     public function __construct()
     {
+        parent::__construct();
         $this->model = new Group();
     }
 
@@ -22,11 +23,7 @@ class GroupController
     public function actionCreate()
     {
 
-        if(isset($_POST['send_form'])){
-            if($this->model->insert(Group::TABLENAME,$_POST["Group"])) {
-                return header("Location: /group");
-            }
-        }
+        $this->sendForm("create",Group::TABLENAME,"Group","group");
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/create.php");
         return true;
@@ -35,24 +32,14 @@ class GroupController
     public function actionUpdate()
     {
         // Подключаем вид
-        if(isset($_POST['send_form'])){
-            $params_url = explode("/",$_SERVER["REQUEST_URI"]);
-            $id = $params_url[3];
-            if($this->model->update(Group::TABLENAME,$_POST["Group"],$id)) {
-                return header("Location: /group");
-            }
-        }
+        $this->sendForm("update",Group::TABLENAME,"Group","group");
         require_once(ROOT . "/views/site/".$this->tmp_name."/update.php");
         return true;
     }
 
     public function actionDelete()
     {
-        $params_url = explode("/",$_SERVER["REQUEST_URI"]);
-        $id = $params_url[3];
-        if($this->model->delete(Group::TABLENAME,$id)) {
-            return header("Location: /group");
-        }
+        $this->sendForm("delete",Group::TABLENAME,"Group","group");
         return true;
     }
 

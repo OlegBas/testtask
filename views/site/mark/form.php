@@ -15,7 +15,7 @@
     </div>
     <div class="form-group">
         <label for="mark">Оценка</label>
-        <input type="text" class="form-control" id="mark" placeholder="Оценка" min = "2" max = "5" name = "Mark[mark]">
+        <input type="text" class="form-control" id="mark" placeholder="Оценка" min = "2" max = "5" name = "Mark[mark]" value = "">
     </div>
 
     <button type="submit" class="btn btn-default" name = "send_form"><?=$title_action?></button>
