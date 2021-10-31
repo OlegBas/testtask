@@ -1,1 +1,1 @@
-<a href = "<?=$url_page?>/create"  class="btn btn-success">Создать</a>
+<a href = "<?=$url_page?>/create"  class="btn btn-success" id = "create-button">Создать</a>

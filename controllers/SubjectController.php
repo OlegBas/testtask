@@ -33,6 +33,8 @@ class SubjectController extends BaseController
 
     public function actionUpdate()
     {
+        $id = $this->getIDFromUrl();
+        $entity = $this->model->select(Subject::TABLENAME,"*","id = $id");
         $this->sendForm("update",Subject::TABLENAME,"Subject","subject");
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/update.php");

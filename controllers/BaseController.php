@@ -25,7 +25,7 @@ class BaseController
     }
 
 
-    private function getIDFromUrl(){
+    protected function getIDFromUrl(){
         $params_url = explode("/",$_SERVER["REQUEST_URI"]);
         return $params_url[3];
     }

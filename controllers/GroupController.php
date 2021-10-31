@@ -31,6 +31,8 @@ class GroupController extends BaseController
 
     public function actionUpdate()
     {
+        $id = $this->getIDFromUrl();
+        $entity = $this->model->select(Group::TABLENAME,"*","id = $id");
         // Подключаем вид
         $this->sendForm("update",Group::TABLENAME,"Group","group");
         require_once(ROOT . "/views/site/".$this->tmp_name."/update.php");

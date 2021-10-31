@@ -30,11 +30,11 @@ class Db
     }
 
 
-    protected  function select($tablename,$fields = "*",$where = false,$order = false, $limit = false){
+    public  function select($tablename,$fields = "*",$where = false,$order = false, $limit = false){
 
         $sql = "SELECT * FROM $tablename";
         if($where)
-            $sql = "WHERE ".$where;
+            $sql .= " WHERE ".$where;
 
         if($order)
             $sql .= "ORDER BY ".$order;

@@ -22,6 +22,8 @@ class MarkController extends BaseController
 
     public function actionCreate()
     {
+        $all_subjects = $this->model->selectAll(Subject::TABLENAME);
+        $all_students = $this->model->selectAll(Student::TABLENAME);
         $this->sendForm("create",Mark::TABLENAME,"Mark","mark");
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/create.php");
@@ -30,6 +32,10 @@ class MarkController extends BaseController
 
     public function actionUpdate()
     {
+        $id = $this->getIDFromUrl();
+        $all_subjects = $this->model->selectAll(Subject::TABLENAME);
+        $all_students = $this->model->selectAll(Student::TABLENAME);
+        $entity = $this->model->select(Mark::TABLENAME,"*","id = $id");
         $this->sendForm("update",Mark::TABLENAME,"Mark","mark");
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/update.php");

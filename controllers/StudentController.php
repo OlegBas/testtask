@@ -31,6 +31,8 @@ class StudentController extends BaseController
 
     public function actionUpdate()
     {
+        $id = $this->getIDFromUrl();
+        $entity = $this->model->select(Student::TABLENAME,"*","id = $id");
         $this->sendForm("update",Student::TABLENAME,"Student","student");
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/update.php");
