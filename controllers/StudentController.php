@@ -23,6 +23,7 @@ class StudentController extends BaseController
 
     public function actionCreate()
     {
+        $groups = $this->model->selectAll(Group::TABLENAME);
         $this->sendForm("create",Student::TABLENAME,"Student","student");
         $model = $this->model;
         // Подключаем вид
@@ -32,6 +33,7 @@ class StudentController extends BaseController
 
     public function actionUpdate()
     {
+        $groups = $this->model->selectAll(Group::TABLENAME);
         $id = $this->getIDFromUrl();
         $entity = $this->model->select(Student::TABLENAME,"*","id = $id");
         $this->sendForm("update",Student::TABLENAME,"Student","student");
