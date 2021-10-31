@@ -1,3 +1,4 @@
+<?php include ROOT . '/widgets/alert.php'; ?>
 <form role="form" method = "post">
     <div class="form-group">
         <label for="mark">Предмет</label>

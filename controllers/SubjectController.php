@@ -26,6 +26,7 @@ class SubjectController extends BaseController
     public function actionCreate()
     {
         $this->sendForm("create",Subject::TABLENAME,"Subject","subject");
+        $model = $this->model;
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/create.php");
         return true;
@@ -36,6 +37,7 @@ class SubjectController extends BaseController
         $id = $this->getIDFromUrl();
         $entity = $this->model->select(Subject::TABLENAME,"*","id = $id");
         $this->sendForm("update",Subject::TABLENAME,"Subject","subject");
+        $model = $this->model;
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/update.php");
         return true;
@@ -43,7 +45,11 @@ class SubjectController extends BaseController
 
     public function actionDelete()
     {
-        $this->sendForm("delete",Subject::TABLENAME,"Subject","subject");
+        if($this->sendForm("delete",Subject::TABLENAME,"Subject","subject")){
+            $id = $this->getIDFromUrl();
+            $mark_model = new Mark();
+            $mark_model->deleteMarksOnSubject($id);
+        }
         return true;
     }
 

@@ -24,6 +24,7 @@ class StudentController extends BaseController
     public function actionCreate()
     {
         $this->sendForm("create",Student::TABLENAME,"Student","student");
+        $model = $this->model;
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/create.php");
         return true;
@@ -34,6 +35,7 @@ class StudentController extends BaseController
         $id = $this->getIDFromUrl();
         $entity = $this->model->select(Student::TABLENAME,"*","id = $id");
         $this->sendForm("update",Student::TABLENAME,"Student","student");
+        $model = $this->model;
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/update.php");
         return true;
@@ -41,7 +43,12 @@ class StudentController extends BaseController
 
     public function actionDelete()
     {
-        $this->sendForm("delete",Student::TABLENAME,"Student","student");
+
+        if($this->sendForm("delete",Student::TABLENAME,"Student","student")){
+            $id = $this->getIDFromUrl();
+            $mark_model = new Mark();
+            $mark_model->deleteMarksOnStudent($id);
+        }
         return true;
     }
 

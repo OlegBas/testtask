@@ -6,4 +6,20 @@ class Group extends BaseModel
 
 
 
+
+
+
+    public function validate()
+    {
+        if (strlen($this->safe_data["Group"]["title"]) < 2) {
+            array_push($this->errors, "Заголовок не может быть меньше 2 символов!");
+        }
+        if (strlen($this->safe_data["Group"]["title"]) > 5) {
+            array_push($this->errors, "Заголовок не может быть больше 5 символов!");
+        }
+        return empty($this->errors);
+    }
+
+
+
 }

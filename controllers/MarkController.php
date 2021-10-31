@@ -25,6 +25,7 @@ class MarkController extends BaseController
         $all_subjects = $this->model->selectAll(Subject::TABLENAME);
         $all_students = $this->model->selectAll(Student::TABLENAME);
         $this->sendForm("create",Mark::TABLENAME,"Mark","mark");
+        $model = $this->model;
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/create.php");
         return true;
@@ -37,6 +38,7 @@ class MarkController extends BaseController
         $all_students = $this->model->selectAll(Student::TABLENAME);
         $entity = $this->model->select(Mark::TABLENAME,"*","id = $id");
         $this->sendForm("update",Mark::TABLENAME,"Mark","mark");
+        $model = $this->model;
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/update.php");
         return true;

@@ -34,17 +34,22 @@ class BaseController
         switch($action){
             case "create" :
                 if(isset($_POST['send_form'])){
-                    if($this->model->insert($tablename,$this->safe_post[$entity])) {
-                        return header("Location: /$url_back");
+                    if($this->model->validate()) {
+                        if ($this->model->insert($tablename, $this->safe_post[$entity])) {
+                            return header("Location: /$url_back");
+                        }
                     }
                 }
                 break;
             case "update" :
                 if(isset($_POST['send_form'])){
                     $id = $this->getIDFromUrl();
-                    if($this->model->update($tablename,$this->safe_post[$entity],$id)) {
-                        return header("Location: /$url_back");
+                    if($this->model->validate()) {
+                        if ($this->model->update($tablename, $this->safe_post[$entity], $id)) {
+                            return header("Location: /$url_back");
+                        }
                     }
+
                 }
                 break;
             case "delete" :

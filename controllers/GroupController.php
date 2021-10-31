@@ -24,6 +24,7 @@ class GroupController extends BaseController
     {
 
         $this->sendForm("create",Group::TABLENAME,"Group","group");
+        $model = $this->model;
         // Подключаем вид
         require_once(ROOT . "/views/site/".$this->tmp_name."/create.php");
         return true;
@@ -35,6 +36,7 @@ class GroupController extends BaseController
         $entity = $this->model->select(Group::TABLENAME,"*","id = $id");
         // Подключаем вид
         $this->sendForm("update",Group::TABLENAME,"Group","group");
+        $model = $this->model;
         require_once(ROOT . "/views/site/".$this->tmp_name."/update.php");
         return true;
     }
