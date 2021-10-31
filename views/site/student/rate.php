@@ -8,14 +8,14 @@ $url_page = "/student/rate";
 
     <table class="table table-striped" >
         <tr>
-            <th>ID</th>
+            <th>№</th>
             <th>ФИО</th>
             <th>Средний балл</th>
         </tr>
         <?php  for($i = 0;$i < count($students);$i++) {?>
             <tr>
 
-                <td><?=$students[$i]["id"]?></td>
+                <td><?=$i+1?></td>
                 <td><?=$students[$i]["fio"]?></td>
                 <td><?=$students[$i]["avgmark"]?></td>
             </tr>
